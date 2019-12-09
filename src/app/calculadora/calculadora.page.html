@@ -1,0 +1,81 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Calculadora</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <table class="calculadora">
+    <thead>
+      <tr>
+        <th colspan="4">
+          <span id="display" #display>0</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <ion-button (click)="escribir(7)" color="light">7</ion-button>
+        </td>
+        <td>
+          <ion-button (click)="escribir(8)" color="light">8</ion-button>
+        </td>
+        <td>
+          <ion-button (click)="escribir(9)" color="light">9</ion-button>
+        </td>
+        <td>
+          <ion-button color="dark" (click)="operacion('/')">÷</ion-button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <ion-button (click)="escribir('4')" color="light">4</ion-button>
+        </td>
+        <td>
+          <ion-button (click)="escribir('5')" color="light">5</ion-button>
+        </td>
+        <td>
+          <ion-button (click)="escribir('6')" color="light">6</ion-button>
+        </td>
+        <td>
+          <ion-button color="dark" (click)="operacion('*')">x</ion-button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <ion-button (click)="escribir('1')" color="light">1</ion-button>
+        </td>
+        <td>
+          <ion-button (click)="escribir('2')" color="light">2</ion-button>
+        </td>
+        <td>
+          <ion-button (click)="escribir('3')" color="light">3</ion-button>
+        </td>
+        <td>
+          <ion-button color="dark" (click)="operacion('-')">-</ion-button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <ion-button color="{{colorBoton}}" (click)="borrar()">{{nombreBoton}}</ion-button>
+        </td>
+        <td>
+          <ion-button (click)="escribir('0')" color="light">0</ion-button>
+        </td>
+        <td>
+          <ion-button (click)="operacion('=')" color="success">=</ion-button>
+        </td>
+        <td>
+          <ion-button color="dark" (click)="operacion('+')">+</ion-button>
+        </td>
+      </tr>
+    </tbody>
+    <ion-toggle color="danger" (ngModelChange)="cambioToggle($event)" [(ngModel)]="estadoBoton">
+    </ion-toggle>
+  </table>
+</ion-content>

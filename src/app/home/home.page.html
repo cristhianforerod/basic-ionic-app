@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Inicio
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="container">
+    <ion-grid *ngFor="let item of items">
+      <ion-row>
+        <ion-col>
+          <ion-card>
+            <ion-card-content>
+              <a ion-button clear [routerLink]="item.route" class="link-img">
+                <ion-img [src]="item.src" class="icon-principal"></ion-img>
+              </a>
+              <h4 class="text-icon">{{item.name}}</h4>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
